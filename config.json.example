@@ -1,0 +1,20 @@
+{
+  "bot": {
+    "owners": ["ID_DO_OWNER"],
+    "prefix": "&",
+    "status": null,
+    "token": "TOKEN_DO_BOT"
+  },
+  "colors": {
+    "general": "#6fcbf2",
+    "error": "#FF0048",
+    "success": "#41FF70"
+  },
+  "options": {
+    "defaultImageFormat": "png",
+    "defaultImageSize": 512,
+    "getAllUsers": false,
+    "disableEveryone": true,
+    "maxShards": 1
+  }
+}
