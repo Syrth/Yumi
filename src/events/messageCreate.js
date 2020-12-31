@@ -24,7 +24,18 @@ module.exports = class messageCreate {
       if (command.config.nsfw && !message.channel.nsfw) return message.channel.createMessage("Você não pode enviar nsfw nesse canal!")
 
       if (command.config.args && !args.length) return message.channel.createMessage("Você não passou os argumentos")
-      
+
+      if (command.config.cooldown && !this.client.config.owners.includes(message.author.id)) {
+        if (this.client.cooldowns.includes(`${command.config.name}:${message.author.id}`)) {
+          return message.addReaction("⏳")
+        } else {
+          this.client.cooldowns.push(`${command.config.name}:${message.author.id}`)
+          setTimeout(() => {
+            this.client.cooldowns.splice(this.client.cooldowns.indexOf(`${command.config.name}:${message.author.id}`), 1)
+          }, command.config.cooldown * 1000)
+        }
+      }
+
       return command.run(message, args)
     }
   }

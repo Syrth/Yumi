@@ -8,7 +8,7 @@
       allowdms: params.allowdms || false,
       args: params.args || false,
       category: params.category || null,
-      cooldown: params.cooldown || 1000,
+      cooldown: params.cooldown || 6,
       description: params.description || "Sem descrição",
       nsfw: params.nsfw || false,
       owner: params.owner || false,
