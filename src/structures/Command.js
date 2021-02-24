@@ -4,7 +4,7 @@
 
     this.config = {
       name: params.name || null,
-      alias: params.alias || null,
+      alias: params.alias || [],
       allowdms: params.allowdms || false,
       args: params.args || false,
       category: params.category || null,

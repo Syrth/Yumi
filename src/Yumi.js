@@ -6,7 +6,6 @@ module.exports = class Yumi extends Client {
   constructor(token, config) {
     super(token, config.options)
     this.config = config.bot
-    this.colors = config.colors
 
     this.logger = require("consola")
     this.version = require("../package").version;

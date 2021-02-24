@@ -1,3 +1,5 @@
+const embed = require("../utils/embed")
+
 module.exports = class messageCreate {
   constructor(client) {
     this.client = client
@@ -14,7 +16,7 @@ module.exports = class messageCreate {
 
     const [name, ...args] = message.content.slice(prefix.length).trim().split(/ +/)
 
-    const command = this.client.commands.find(cmd => cmd.config.name == name.toLowerCase() || cmd.aliases.includes(name.toLowerCase()))
+    const command = this.client.commands.find(cmd => cmd.config.name == name.toLowerCase() || cmd.config.alias.includes(name.toLowerCase()))
 
     if (command) {
       if (command.config.owner && !this.client.config.owners.includes(message.author.id)) return message.channel.createMessage("Comando exclusivo do meu desenvolvedor!")
